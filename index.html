@@ -5,44 +5,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>原来如此(souka)</title>
 	</head>
-	<style type="text/css">
-		/* div{border:1px solid red;} */
-		.search{
-			text-align: center;
-			margin-top: 15.625rem;
-		}
-		.search-box{
-			border:2px solid black; 
-			display: inline-block; 
-			margin: auto; 
-			text-align: center;
-			border-radius: 10px;
-		}
-		.search-engin{width: 50px;}
-		.search-icon{width: 30px; margin: 0px 10px 0px 10px;}
-		.search-input{width: 18.75rem; border: none; outline: none; font-size: 20px; font-weight: 500;  font-family: Sans-serif;}
-		@media (max-width: 600px) {
-			.search-input{width: 15.625rem; border: none; outline: none; font-size: 20px; font-weight: 500;  font-family: Sans-serif;}
-		}
-		.search-term{display: inline-flex; height: 50px; vertical-align: middle;}
-	</style>
-	<script src="//at.alicdn.com/t/font_1944411_59l0yrce7b.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="icon" href="./static/img/logo.png" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="./static/css/index.css"/>
+	<script src="//at.alicdn.com/t/font_1944411_sn1vk0k5eur.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./static/js/vue.js" type="text/javascript" charset="utf-8"></script>
 	<body>
+		<!-- <div class="menu">
+			<svg class="icon cat-icon" aria-hidden="true">
+			  <use xlink:href="#icon-cat"></use>
+			</svg>
+		</div> -->
 		<div class="search">
 			<div class="search-box">
 				<div class="search-engine search-term">
 					<svg class="icon search-icon" aria-hidden="true">
 					  <use xlink:href="#icon-google"></use>
 					</svg>
-				</div><div class="search-engine search-term">
-					<input type="text" name="" class="search-input" value="" />
-				</div><div class="search-engine search-term">
+				</div><div class="search-term">
+					<input v-focus type="text" v-model="search_content" class="search-input" @keyup.enter="search_action">
+				</div><div class="search-button search-term" v-on:click="search_action">
 					<svg class="icon search-icon" aria-hidden="true">
 					  <use xlink:href="#icon-search"></use>
 					</svg>
 				</div>
 			</div>
 		</div>
-		
 	</body>
+	<script src="./static/js/index.js" type="text/javascript" charset="utf-8"></script>
 </html>
